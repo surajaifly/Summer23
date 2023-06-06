@@ -1,0 +1,48 @@
+<template>
+    <lightning-card >
+        <h2 slot="title">Conditional Rendering</h2>
+        <lightning-button label="Show" slot="actions" onclick={showAvatar}></lightning-button>
+        <lightning-button label="Hide" slot="actions" onclick={hideAvatar}></lightning-button>
+        <div class="slds-p-horizontal_medium">
+            <template if:true={showUIElement}>
+                <lightning-avatar 
+                    src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"
+                    size="large"
+                ></lightning-avatar>
+            </template>
+
+            <template for:each={firstNames} for:item="firstName">
+                <lightning-badge key={firstName}
+                    label={firstName} 
+                    icon-name="standard:contact"
+                ></lightning-badge>
+            </template>   
+            
+            
+            <template for:each={nameWithIcons} for:item="namedetails">
+                <lightning-badge key={namedetails.name}
+                    label={namedetails.name} 
+                    icon-name={namedetails.icon}
+                ></lightning-badge>
+            </template>  
+
+
+            <table>
+            <template for:each={contacts} for:item="contact">
+                <tr key={contact.Name}>
+                    <td>
+                        <lightning-badge 
+                            label={contact.Name} 
+                            icon-name="standard:contact"
+                        ></lightning-badge>
+                    </td>
+                    <td>
+                        {contact.Email}
+                    </td>
+                </tr>
+                
+            </template>
+        </table>
+        </div>
+    </lightning-card>
+</template>

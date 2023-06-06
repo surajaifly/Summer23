@@ -1,0 +1,62 @@
+<template>
+    <lightning-card >
+        <h2 slot="title">Track Decorator</h2>
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <!--{firstName} {lastName}
+            <br/>-->
+            <p>
+                <lightning-formatted-name
+                    first-name={firstName}
+                    last-name={lastName}
+                ></lightning-formatted-name>
+            </p>
+
+        <p>
+            <lightning-formatted-number 
+                value={age}
+                maximum-fraction-digits="0"
+            ></lightning-formatted-number>
+        </p>
+
+        <p>
+            <lightning-formatted-email 
+                value={email} 
+            ></lightning-formatted-email>
+        </p>
+
+            <p>
+            <lightning-formatted-number 
+                value={salary} 
+                format-style="currency" 
+                currency-code="USD"
+            ></lightning-formatted-number>
+            </p>
+
+            <p>
+            <lightning-formatted-date-time 
+                value={birthdate}
+            ></lightning-formatted-date-time>
+        </p>
+        <p>
+            <lightning-formatted-date-time value={birthdate}
+            year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                        minute="2-digit" time-zone-name="short"></lightning-formatted-date-time>
+        </p>
+        </div>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>
+
+    <lightning-card>
+        <h2 slot="title">Input from User</h2>
+        <div class="slds-p-horizontal_medium">
+            <lightning-input 
+                type="text" 
+                label="Enter Last Name"
+                onblur={handleBlur}
+            ></lightning-input>
+            <!--onchange={handleInputChange}-->
+        </div>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>
+</template>
