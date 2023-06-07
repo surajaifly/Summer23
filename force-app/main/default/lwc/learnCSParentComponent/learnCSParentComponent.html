@@ -1,0 +1,10 @@
+<template>
+    <lightning-card>
+        <h2 slot="title">Custom Event: {valueFromChild}</h2>
+        <div class="slds-p-horizontal_small">
+            <c-learn-c-s-child-component
+                onchildinput={handleCustomEvent}
+            ></c-learn-c-s-child-component>
+        </div>
+    </lightning-card>
+</template>

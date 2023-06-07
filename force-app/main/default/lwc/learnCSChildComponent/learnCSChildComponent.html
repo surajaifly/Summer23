@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-button 
+            label="Send" 
+            slot="actions"
+            onclick={handleButtonClick}
+        ></lightning-button>
+        
+        <lightning-input 
+            type="text" 
+            label="Enter some text"
+            onchange={handleInputChange}
+        ></lightning-input>
+    </lightning-card>
+</template>
