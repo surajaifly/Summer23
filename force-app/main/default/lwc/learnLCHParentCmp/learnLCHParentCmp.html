@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <h1 slot="title">
+            Parent Component
+        </h1>
+        <lightning-button slot="actions" label="show/hide" onclick={handleShowHideClick}></lightning-button>
+        <div>
+            <c-learn-l-c-h-child-cmp if:true={showChildCMP}></c-learn-l-c-h-child-cmp>
+        </div>
+    </lightning-card>
+</template>
