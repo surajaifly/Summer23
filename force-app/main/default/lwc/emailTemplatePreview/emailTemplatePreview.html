@@ -1,0 +1,20 @@
+<template>
+	<lightning-card>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12">
+				Name :<p>
+					<lightning-formatted-text value={emailTemplate.name}></lightning-formatted-text>
+				</p>
+			</lightning-layout-item>
+			<lightning-layout-item size="12">
+				Subject :<p>
+					<lightning-formatted-text value={emailTemplate.subject}></lightning-formatted-text>
+				</p>
+			</lightning-layout-item>
+			<lightning-layout-item size="12">
+				Body :<lightning-formatted-rich-text value={emailTemplate.body}></lightning-formatted-rich-text>
+			</lightning-layout-item><br>
+
+    </lightning-layout>
+	</lightning-card>
+</template>

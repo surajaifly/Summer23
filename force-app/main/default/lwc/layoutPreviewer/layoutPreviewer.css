@@ -1,0 +1,52 @@
+.red-bg{
+    height: var(--red-bg-height);
+    width: 150px;
+    background-color: red;
+    border-radius: var(--border-radius);
+}
+.yuva-image{
+    position: absolute;
+    margin-top: -270px;
+    margin-left: 26px;
+    border-radius: var(--border-radius);
+    height: 240px;
+}
+
+.line-cls{
+	background-color: red;
+    height: 2px;
+    margin-top: 45px;
+}
+
+.yellow-bg{
+	background-color: bisque;
+    height: 70px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.yuva-text{
+	position: absolute;
+    margin-top: -55px;
+    margin-left: 8%;
+    font-size: 30px;
+    color: red;
+}
+
+@media only screen and (max-width: 350px) {
+	.red-bg{
+		height: 250px;
+		width: 100px;
+	}
+
+	.yuva-image{
+		margin-top: -240px;
+		margin-left: 10px;
+		height: 230px;
+		width: 261px
+	}
+
+	.yuva-text{
+		font-size: 24px;
+	}
+}

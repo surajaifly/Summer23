@@ -1,0 +1,105 @@
+<template>
+	<lightning-card>
+		<div class="slds-form-element">
+			<div class="slds-form-element__control">
+				<div class="slds-combobox_container">
+					<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+						<div id="listbox-id-3" class="slds-dropdown slds-dropdown_fluid" role="listbox">
+						<ul class="slds-listbox slds-listbox_vertical" role="group" aria-label="Group One">
+							<li role="presentation" class="slds-listbox__item">
+							<div id="option0" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="presentation">
+								<h3 class="slds-listbox__option-header" role="presentation">Group One</h3>
+							</div>
+							</li>
+							<li role="presentation" class="slds-listbox__item">
+							<div id="option1" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+								<span class="slds-media__figure slds-listbox__option-icon"></span>
+								<span class="slds-media__body">
+								<span class="slds-truncate" title="Burlington Textiles Corp of America">Burlington Textiles Corp of America</span>
+								</span>
+							</div>
+							</li>
+							<li role="presentation" class="slds-listbox__item">
+							<div id="option2" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+								<span class="slds-media__figure slds-listbox__option-icon"></span>
+								<span class="slds-media__body">
+								<span class="slds-truncate" title="Dickenson plc">Dickenson plc</span>
+								</span>
+							</div>
+							</li>
+						</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+        <table>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+		<lightning-layout multiple-rows><!-- Table  multiple-rows-->
+			<lightning-layout-item padding="around-small" size="6" large-device-size="4" medium-device-size="4" ><!-- TD /TR -->
+				<div class="header-column">
+					<p class="field-title" title="Field 1">Field 1</p>
+					<p>Name</p>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item padding="around-small" size="12" large-device-size="4" medium-device-size="4">
+				<div class="header-column">
+					<p class="field-title" title="Field2 (3)">Field 2 (3)
+						<lightning-button-icon icon-name="utility:down" variant="border-filled" size="small"
+							alternative-text="More Actions"></lightning-button-icon>
+					</p>
+					<p>Eligibility</p>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item padding="around-small" size="6" large-device-size="4" medium-device-size="4" small-device-size="6">
+				<div class="header-column">
+					<p class="field-title" title="Field 3">Field 3</p>
+					<a href="#">Website</a>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item padding="around-small" size="6" large-device-size="4" medium-device-size="4" small-device-size="6">
+				<div class="header-column">
+					<p class="field-title" title="Field 4">Field 4</p>
+					<p>
+						<span title="">Address</span>
+					</p>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+
+        <hr/>
+
+        <lightning-layout multiple-rows><!-- Table  multiple-rows-->
+			<lightning-layout-item padding="around-small" size="12" ><!-- TD /TR -->
+				<div class="red-bg"></div>
+                <div >
+                    <img class="yuva-image" src="https://image.shutterstock.com/image-vector/multinational-people-group-smiling-close-260nw-1888078369.jpg"/>
+                </div>
+			</lightning-layout-item>
+
+            <lightning-layout-item padding="around-small" size="12" ><!-- TD /TR -->
+				<lightning-layout>
+                    <lightning-layout-item size="6" >
+                        <div class="line-cls">
+
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6" >
+                        <div class="yellow-bg">
+
+                        </div>
+                        <div class="yuva-text">
+                            <span>SGS Yuva</span>
+                        </div>
+                    </lightning-layout-item>
+				</lightning-layout>
+			</lightning-layout-item>
+
+			
+		</lightning-layout>
+	</lightning-card>
+
+</template>

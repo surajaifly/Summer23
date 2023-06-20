@@ -1,0 +1,87 @@
+<template>
+	<lightning-card variant="Narrow" title="Email Previewer" icon-name="standard:account">
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="7" large-device-size="7" medium-device-size="7" small-device-size="12" padding="around-small">
+				<lightning-layout-item size="12" padding="around-small">
+					<lightning-layout multiple-rows>
+						<lightning-layout-item size="5">
+							<lightning-combobox name="progress" label="Select folder" placeholder="Select Folder Name"
+								options={emailFolderNameByIdOption} onchange={handlefolderChange}></lightning-combobox>
+						</lightning-layout-item>
+						<lightning-layout-item size="1">
+						</lightning-layout-item>
+						<lightning-layout-item size="6">
+							<lightning-combobox name="select-object" label="Select Object" value={selectedObject}
+								placeholder="Select Object Name" options={objectsName} onchange={handleobjectChange}>
+							</lightning-combobox>
+						</lightning-layout-item>
+					</lightning-layout>
+				</lightning-layout-item>
+				<!-- Row Two -->
+				<lightning-layout-item size="12" padding="around-small">
+					<lightning-layout multiple-rows>
+						<lightning-layout-item size="5">
+							<lightning-combobox name="progress" label="Select Email Templete"
+								placeholder="Select Email Templete" value={selectedEmailTemplateId}
+								options={emailTemplateByIdOption} onchange={handleEmailTempleteChange}>
+							</lightning-combobox>
+						</lightning-layout-item>
+						<lightning-layout-item size="1">
+						</lightning-layout-item>
+						<lightning-layout-item size="6">
+							<lightning-input name="search-record" label="Search records for the selected Object"
+								type="search" onkeyup={handleSearch}></lightning-input>
+						</lightning-layout-item>
+					</lightning-layout>
+				</lightning-layout-item>
+			</lightning-layout-item>
+			<lightning-layout-item size="5" large-device-size="5" medium-device-size="5" small-device-size="12" padding="around-small">
+				<table>
+					<tr>
+						<th>Select Record to Preview</th>
+					</tr>
+					<template if:true={records}>
+						<template for:each={records} for:item="record">
+							<tr key={record.Id} data-id={record.Id} onclick={onRecordSelected}>
+								<td class="records-display">
+									<span class="slds-badge" onclick={badgeClick} data-id={record.CaseNumber} data-name={record.Name} >{record.Name}{record.CaseNumber}</span>
+								</td>
+							</tr>
+						</template>
+					</template>
+					<template if:false={records}>
+						<span style="padding: 5px;" class="slds-badge slds-theme_error">No Records to Display.</span>
+					</template>
+				</table>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" padding="around-small">
+				<lightning-layout>
+					<template if:true={showPreview}>
+						<lightning-layout-item size="1" padding="around-small">
+						</lightning-layout-item>
+						<lightning-layout-item size="10" padding="around-small" style="background-color: aliceblue">
+							<lightning-tabset variant="vertical">
+								<lightning-tab label="TEXT PREVIEW">
+									SUBJECT:<br/>
+									<lightning-formatted-text value={subject}></lightning-formatted-text><br/>
+									<br/><br/>
+									BODY:<br/>
+									<lightning-formatted-text value={textPreview}></lightning-formatted-text>
+								</lightning-tab>
+								<lightning-tab label="HTML PREVIEW">
+									SUBJECT:<br/>
+									<lightning-formatted-rich-text value={subject}></lightning-formatted-rich-text><br/>
+									<br/><br/>
+									BODY:<br/>
+									<lightning-formatted-rich-text value={htmlPreview}></lightning-formatted-rich-text>
+								</lightning-tab>
+							</lightning-tabset>
+						</lightning-layout-item>
+						<lightning-layout-item size="1" padding="around-small">
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</lightning-layout-item>
+		</lightning-layout>
+	</lightning-card>
+</template>

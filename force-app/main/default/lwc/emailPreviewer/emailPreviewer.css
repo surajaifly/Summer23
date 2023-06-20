@@ -1,0 +1,14 @@
+.records-display{
+	padding: 5px; 
+	cursor: pointer;
+}
+
+.records-display:hover{
+	background-color: gainsboro;
+    border-radius: 4px;
+}
+
+.selectionBox{
+	background: #7be4ff;
+	border-color:#7be4ff;
+}
