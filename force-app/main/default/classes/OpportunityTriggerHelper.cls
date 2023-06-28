@@ -86,4 +86,26 @@ public class OpportunityTriggerHelper {
             }
         }
     }
+
+    
+    public static void afterUpdate(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityByIdMap){
+        
+        List<Messaging.SingleEmailMessage> messages = new List<Messaging.SingleEmailMessage>();
+        
+        for(Opportunity newOpportunityObj: newOpportunityList){
+            Opportunity oldOpportunityObj = oldOpportunityByIdMap.get(newOpportunityObj.Id);
+            if(newOpportunityObj.StageName != oldOpportunityObj.StageName  //'!=' means not Equal.
+               && newOpportunityObj.StageName == 'Negotiation/Review'){
+                
+                Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();
+                message.toAddresses = new String[] {newOpportunityObj.OwnerId};
+                message.subject = 'Stage Change';
+                message.plainTextBody = 'This is to noitify that stage is changed from ' + oldOpportunityObj.StageName +
+                    ' to ' + newOpportunityObj.StageName;
+                messages.add(message);
+            }
+        }
+        
+        Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);
+    }
 }
