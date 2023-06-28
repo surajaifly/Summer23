@@ -17,11 +17,6 @@ Need to create a related Task Record, Where
 // #4: 	Never ever have the DML in Loop.
 // 
 */
-/* Requirement:
-When the Opportunity Stage is updated to ‘Negotiations’,
-THEN
-Send an email to the Opportunity Owner.
-*/
 public class OpportunityTriggerHelper {
 	
     public static void afterInsert(List<Opportunity> opportunityList){
@@ -91,6 +86,7 @@ public class OpportunityTriggerHelper {
             }
         }
     }
+
     
     public static void afterUpdate(List<Opportunity> newOpportunityList, Map<Id, Opportunity> oldOpportunityByIdMap){
         
