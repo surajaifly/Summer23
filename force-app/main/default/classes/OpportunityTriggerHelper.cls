@@ -22,6 +22,7 @@ When the Opportunity Stage is updated to ‘Negotiations’,
 THEN
 Send an email to the Opportunity Owner.
 */
+
 public class OpportunityTriggerHelper {
 	
     public static void afterInsert(List<Opportunity> opportunityList){
