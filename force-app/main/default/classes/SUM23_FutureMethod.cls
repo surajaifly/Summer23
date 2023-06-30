@@ -19,6 +19,7 @@ public class SUM23_FutureMethod {
     @future
     public static void futureMethod2(){
         System.debug('More FUTURE');
+
     }
     
     public static void normalMethod2(){
